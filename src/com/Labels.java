@@ -19,6 +19,7 @@ public class Labels extends JButton{
         img = img.getScaledInstance(60, 20, Image.SCALE_SMOOTH);
         icon = new ImageIcon(img);
 
+        this.setBounds(0, 300 + counter * 80, 350, 70);
         this.setIcon(icon);
         this.setIconTextGap(20);
         this.setText(text);
@@ -28,8 +29,8 @@ public class Labels extends JButton{
         this.setBackground(Color.decode(colorPassive));
         this.setForeground(Color.white);
         this.setHorizontalAlignment(JButton.LEFT);
-        //this.add(button);
         counter++;
+
         this.addMouseListener(new java.awt.event.MouseAdapter(){
             @Override
             public void mouseEntered(java.awt.event.MouseEvent evt){

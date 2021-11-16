@@ -3,7 +3,7 @@ package pythonProcess;
 import java.io.*;
 public class Prces {
     public static void main(String args[]) throws Exception {
-      String command[] = {"python","A.py"};
+      String command[] = {"echo, %cd%"};
       ProcessBuilder pb = new ProcessBuilder(command);
       pb.directory(new File("/Users/prathamaggarwal/Desktop/College/CSD213/Swing/src/com/"));
       try {
