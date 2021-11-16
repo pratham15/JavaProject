@@ -19,7 +19,7 @@ public class Hello {
 
         Labels[] Companies = new Labels[5];
 
-
+        String cmds[] = {"@Dell", "@HCL", "@GoldmanSachs", "@TATA", "@Wipro"};
         JPanel bluePanel = new JPanel();
         bluePanel.setBackground(Color.decode("#14004F"));
         bluePanel.setBounds(0, 0, 350,800 );
@@ -33,20 +33,22 @@ public class Hello {
         HCL.isSelected = true;
         HCL.changeColor();
 
-
-        String command[] = {"python", "A.py", "--company_handle", "@Dell"};
-        ProcessBuilder pb = new ProcessBuilder(command);
-        pb.directory(new File("/Users/prathamaggarwal/Desktop/College/CSD213/Swing/src/pythonProcess/"));
-        try {
-            Process p = pb.start();
-            BufferedReader reader = new BufferedReader( new InputStreamReader(p.getInputStream()));
-            String line;
-            while((line = reader.readLine()) != null){
-                System.out.println(line); }
-            int exitCode = p.waitFor();
-            System.out.println("Exited with code" + exitCode);
-        } catch(Exception e) {
-            e.printStackTrace();
+        for(String company: cmds) {
+            String command[] = {"python", "A.py", "--company_handle", company};
+            ProcessBuilder pb = new ProcessBuilder(command);
+            pb.directory(new File("/Users/prathamaggarwal/Desktop/College/CSD213/Swing/src/pythonProcess/"));
+            try {
+                Process p = pb.start();
+                BufferedReader reader = new BufferedReader(new InputStreamReader(p.getInputStream()));
+                String line;
+                while ((line = reader.readLine()) != null) {
+                    System.out.println(line);
+                }
+                int exitCode = p.waitFor();
+                System.out.println("Exited with code" + exitCode);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
 
 

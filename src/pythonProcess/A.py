@@ -11,6 +11,7 @@ import json
 import pandas as pd
 import argparse
 import matplotlib.pyplot as plt
+plt.figure(figsize=(5.2, 3.08))
 
 bearer_token = "AAAAAAAAAAAAAAAAAAAAAJTaUgEAAAAAJMYYRQkRE78A6L60A5BsD0aQh2Q%3D1MIpS02Tmc3NUSS4vZqEbbnUDFjyp0z3Sd3taQNe47JFwrPKqx"
 
@@ -47,7 +48,7 @@ def extractData(companyTwitter: str) -> None:
     rawData = request(companyTwitter)
     tweets = rawData['data']
     tweetsDataFrame = pd.DataFrame(tweets, columns=["id","text"])
-    tweetsDataFrame.to_csv('{}_latest_tweets.csv'.format(companyTwitter), index=True)
+    # tweetsDataFrame.to_csv('{}_latest_tweets.csv'.format(companyTwitter), index=True)
 
     analyser = SentimentIntensityAnalyzer()
 
