@@ -2,13 +2,17 @@ package com;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class MyFrame extends JFrame {
-    MyFrame(Component C) {
+
+    MyFrame(Component ...C) {
         this.setDefaultCloseOperation(this.EXIT_ON_CLOSE);
         this.setLayout(null);
         this.setSize(1200, 800);
         this.setVisible(true);
-        this.add(C);
+        for(Component comp: C)
+            this.add(comp);
     }
 }
