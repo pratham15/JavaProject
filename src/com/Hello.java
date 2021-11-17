@@ -6,6 +6,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.InputStreamReader;
 import javax.swing.*;
+import javax.swing.border.Border;
 
 public class Hello {
 
@@ -19,7 +20,6 @@ public class Hello {
 
         Labels[] Companies = new Labels[5];
 
-        String cmds[] = {"@Dell", "@HCL", "@GoldmanSachs", "@TATA", "@Wipro"};
         JPanel bluePanel = new JPanel();
         bluePanel.setBackground(Color.decode("#14004F"));
         bluePanel.setBounds(0, 0, 350,800 );
@@ -33,37 +33,47 @@ public class Hello {
         HCL.isSelected = true;
         HCL.changeColor();
 
-        for(String company: cmds) {
-            String command[] = {"python", "A.py", "--company_handle", company};
-            ProcessBuilder pb = new ProcessBuilder(command);
-            pb.directory(new File("/Users/prathamaggarwal/Desktop/College/CSD213/Swing/src/pythonProcess/"));
-            try {
-                Process p = pb.start();
-                BufferedReader reader = new BufferedReader(new InputStreamReader(p.getInputStream()));
-                String line;
-                while ((line = reader.readLine()) != null) {
-                    System.out.println(line);
-                }
-                int exitCode = p.waitFor();
-                System.out.println("Exited with code" + exitCode);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-
-
         String directory = "/Users/prathamaggarwal/desktop/college/CSD213/Swing/src/pythonProcess/";
-
         ImageIcon icon = new ImageIcon(directory + "@Dell_pie.png");
         JLabel img = new JLabel();
         img.setBounds(100,200, 700, 500);
         img.setIcon(icon);
+
+        Border black = BorderFactory.createLineBorder(Color.white);
+        bluePanel.setBorder(black);
+
         JPanel mainPanel = new JPanel();
-        mainPanel.setBounds(350, 0, 850, 800);
+        mainPanel.setBounds(350, 0, 1050, 800);
         mainPanel.setLayout(null);
         mainPanel.setBackground(Color.decode("#14004F"));
-        mainPanel.add(img);
+        //mainPanel.add(img);
 
+        JPanel graph = new JPanel();
+        graph.setBounds(20, 100, 500, 400);
+        graph.setBorder(black);
+        graph.setBackground(Color.decode("#14004F"));
+
+
+        JLabel logo = new JLabel("STOCK MARKET"), logoBot = new JLabel("ANALYSIS");
+        logo.setBounds(75, 10, 300, 100);
+        logo.setFont(new Font("Raleway", Font.BOLD, 30));
+        logo.setForeground(Color.white);
+
+        logoBot.setBounds(75, 40, 300, 200);
+        logoBot.setForeground(Color.orange);
+        logoBot.setFont(new Font("Raleway", Font.BOLD, 30));
+
+        ImageIcon logoIcon = new ImageIcon( "/Users/prathamaggarwal/desktop/college/CSD213/Swing/static/Logo.jpeg");
+        Image im = logoIcon.getImage();
+        im = im.getScaledInstance(200, 100, Image.SCALE_SMOOTH);
+        logoIcon = new ImageIcon(im);
+        logoBot.setIcon(logoIcon);
+        logoBot.setHorizontalTextPosition(JLabel.CENTER);
+        logoBot.setVerticalTextPosition(JLabel.TOP);
+
+        bluePanel.add(logo);
+        bluePanel.add(logoBot);
+        mainPanel.add(graph);
         MyFrame frame = new MyFrame(bluePanel, mainPanel);
     }
 }
