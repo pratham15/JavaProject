@@ -9,15 +9,6 @@ import matplotlib.pyplot as plt
 
 def prediction(company_handle):
   df = pd.read_csv('{}_pastdata.csv'.format(company_handle))
-
-  
-
-  
-  
-  #Saving the graph
-
-  #Export plot with name: '{}_priceprediction.png'.format(company_handle)
-  
   
   %matplotlib inline
   from matplotlib.pylab import rcParams
@@ -98,9 +89,6 @@ def prediction(company_handle):
   plt.ylabel("Closing predicted values")
   plt.legend(["Blue - Original closing price", "Orange - Predicted closing price"], loc="best")
 
-
-
-
   # Opening
 
   data = df.sort_index(ascending=True, axis=0)
@@ -173,9 +161,6 @@ def prediction(company_handle):
   from matplotlib import pyplot as plt
 
   plt.savefig('{}_priceprediction.png'.format(company_handle))
- 
-  
-  
   
   return
 if __name__=='__main__':
