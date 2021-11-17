@@ -10,10 +10,10 @@ import matplotlib.pyplot as plt
 def prediction(company_handle):
   df = pd.read_csv('{}_pastdata.csv'.format(company_handle))
 
-  #Filename: '{}_pastdata.csv'.format(company_handle)
+  
 
-  #Calling machine learning model
-  #Plotting the graph
+  
+  
   #Saving the graph
 
   #Export plot with name: '{}_priceprediction.png'.format(company_handle)
@@ -169,6 +169,11 @@ def prediction(company_handle):
   plt.xlabel("Year")
   plt.ylabel("Opening predicted values")
   plt.legend(["Blue - Original opening price", "Orange - Predicted opening price"], loc="best")
+  
+  from matplotlib import pyplot as plt
+
+  plt.savefig('{}_priceprediction.png'.format(company_handle))
+ 
   
   
   
