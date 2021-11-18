@@ -1,10 +1,5 @@
 package com;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.InputStreamReader;
 import javax.swing.*;
 import javax.swing.border.Border;
 
@@ -19,7 +14,7 @@ public class Hello {
                 WIPRO = new Labels("WIPRO", "WIPRO.jpeg");
 
         Labels[] Companies = new Labels[5];
-
+        State.CurrentLabel = HCL;
         JPanel bluePanel = new JPanel();
         bluePanel.setBackground(Color.decode("#14004F"));
         bluePanel.setBounds(0, 0, 350,800 );
@@ -30,8 +25,10 @@ public class Hello {
         bluePanel.add(TATA);
         bluePanel.add(WIPRO);
 
+
         HCL.isSelected = true;
         HCL.changeColor();
+
 
         String directory = "/Users/prathamaggarwal/desktop/college/CSD213/Swing/src/pythonProcess/";
         ImageIcon icon = new ImageIcon(directory + "@Dell_pie.png");

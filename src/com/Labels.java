@@ -13,6 +13,9 @@ public class Labels extends JButton{
             directory = "/Users/prathamaggarwal/desktop/college/CSD213/Swing/static/";
 
     boolean isSelected = false, hover = false;
+    private void changeState(){
+        State.setActive(this);
+    }
     Labels(String text, String URL){
         ImageIcon icon = new ImageIcon(directory + URL);
         Image img = icon.getImage();
@@ -37,7 +40,6 @@ public class Labels extends JButton{
             @Override
             public void mouseEntered(java.awt.event.MouseEvent evt){
                 super.mouseEntered(evt);
-                System.out.println("enter");
                 hover = true;
                 changeColor();
             }
@@ -45,15 +47,14 @@ public class Labels extends JButton{
             @Override
             public void mouseExited(MouseEvent e) {
                 super.mouseExited(e);
-                System.out.println("Exit");
                 hover = false;
                 changeColor();
             }
 
             @Override
-            public void mouseClicked(MouseEvent e) {
-                super.mouseClicked(e);
-                System.out.println("Clicked");
+            public void mouseReleased(MouseEvent e) {
+                super.mouseReleased(e);
+                changeState();
             }
         });
     }
