@@ -7,6 +7,7 @@ import pandas as pd
 import numpy as np
 import argparse
 import matplotlib.pyplot as plt
+
 def prediction(company_handle):
   df = pd.read_csv('{}_pastdata.csv'.format(company_handle))
   
@@ -158,8 +159,6 @@ def prediction(company_handle):
   plt.ylabel("Opening predicted values")
   plt.legend(["Blue - Original opening price", "Orange - Predicted opening price"], loc="best")
   
-  from matplotlib import pyplot as plt
-
   plt.savefig('{}_priceprediction.png'.format(company_handle))
   
   return
