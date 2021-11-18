@@ -6,11 +6,10 @@ Original file - https://drive.google.com/file/d/1bycP3vrPywrky0zsXRWm66jIm728iIU
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-
 def prediction(company_handle):
   df = pd.read_csv('{}_pastdata.csv'.format(company_handle))
   
-  %matplotlib inline
+  # %matplotlib inline
   from matplotlib.pylab import rcParams
   rcParams['figure.figsize'] = 20,10
   rcParams['figure.figsize'] = 20,10
