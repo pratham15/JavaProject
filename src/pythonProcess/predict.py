@@ -2,6 +2,8 @@
 Original file - https://drive.google.com/file/d/1bycP3vrPywrky0zsXRWm66jIm728iIU0/view?usp=sharing
 """
 
+# Line 19 & 152 print the closing price and the predicted opening price for tomorrow respectively. 
+
 #import packages
 import pandas as pd
 import numpy as np
@@ -10,6 +12,11 @@ import matplotlib.pyplot as plt
 
 def prediction(company_handle):
   df = pd.read_csv('{}_pastdata.csv'.format(company_handle))
+  
+  # Printing the Closing price of today
+
+  closingPriceToday = df["Close"].iloc[-1]
+  print("Closing value of today is", closingPriceToday)
   
   # %matplotlib inline
   from matplotlib.pylab import rcParams
@@ -141,7 +148,10 @@ def prediction(company_handle):
 
   X_test = np.reshape(X_test, (X_test.shape[0],X_test.shape[1],1))
   opening_price = model.predict(X_test)
-  opening_price = scaler.inverse_transform(opening_price)
+  opening_price = scaler.inverse_transform(opening_price)[-1]
+  
+  # Printing the predicyed opening price for tomorrow
+  print("The predicted opening price for tomorrow is:", opening_price)
 
 
 #for plotting
