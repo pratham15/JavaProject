@@ -7,13 +7,13 @@ public class Hello {
 
     public static void main(String[] args) {
 
-        Labels HCL = new Labels("HCL", "HCL.png"),
-                GS = new Labels("Goldman Sachs", "GS.png"),
-                DELL = new Labels("Dell", "HCL.png"),
-                TATA = new Labels("TATA", "TATA.png"),
-                WIPRO = new Labels("WIPRO", "WIPRO.jpeg");
+        Company HCL = new Company("HCL", "HCL.png"),
+                GS = new Company("Goldman Sachs", "GS.png"),
+                DELL = new Company("Dell", "HCL.png"),
+                TATA = new Company("TATA", "TATA.png"),
+                WIPRO = new Company("WIPRO", "WIPRO.jpeg");
 
-        Labels[] Companies = new Labels[5];
+
         State.CurrentLabel = HCL;
         JPanel bluePanel = new JPanel();
         bluePanel.setBackground(Color.decode("#14004F"));
