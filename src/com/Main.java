@@ -3,31 +3,28 @@ import java.awt.*;
 import javax.swing.*;
 import javax.swing.border.Border;
 
-public class Hello {
-
+public class Main {
     public static void main(String[] args) {
 
-        Company HCL = new Company("HCL", "HCL.png"),
-                GS = new Company("Goldman Sachs", "GS.png"),
+        Company Adobe= new Company("Adobe", "Adobe.png"),
+                GS = new Company("GoldmanSachs", "GS.png"),
                 DELL = new Company("Dell", "HCL.png"),
-                TATA = new Company("TATA", "TATA.png"),
-                WIPRO = new Company("WIPRO", "WIPRO.jpeg");
+                Schindler= new Company("Schindler", "Schindler.png"),
+                MS= new Company("Morgan Stanley", "MS.jpeg");
 
-
-        State.CurrentLabel = HCL;
+        State.CurrentLabel = Adobe;
         JPanel bluePanel = new JPanel();
         bluePanel.setBackground(Color.decode("#14004F"));
-        bluePanel.setBounds(0, 0, 350,800 );
+        bluePanel.setBounds(0, 0, 350,770 );
         bluePanel.setLayout(null);
-        bluePanel.add(HCL);
+        bluePanel.add(Adobe);
         bluePanel.add(GS);
         bluePanel.add(DELL);
-        bluePanel.add(TATA);
-        bluePanel.add(WIPRO);
+        bluePanel.add(Schindler);
+        bluePanel.add(MS);
 
-
-        HCL.isSelected = true;
-        HCL.changeColor();
+        Adobe.isSelected = true;
+        Adobe.changeColor();
 
 
         String directory = "/Users/prathamaggarwal/desktop/college/CSD213/Swing/src/pythonProcess/";
@@ -40,16 +37,9 @@ public class Hello {
         bluePanel.setBorder(black);
 
         JPanel mainPanel = new JPanel();
-        mainPanel.setBounds(350, 0, 1050, 800);
+        mainPanel.setBounds(350, 0, 1050, 770);
         mainPanel.setLayout(null);
         mainPanel.setBackground(Color.decode("#14004F"));
-        //mainPanel.add(img);
-
-        JPanel graph = new JPanel();
-        graph.setBounds(20, 100, 500, 400);
-        graph.setBorder(black);
-        graph.setBackground(Color.decode("#14004F"));
-
 
         JLabel logo = new JLabel("STOCK MARKET"), logoBot = new JLabel("ANALYSIS");
         logo.setBounds(75, 10, 300, 100);
@@ -70,8 +60,14 @@ public class Hello {
 
         bluePanel.add(logo);
         bluePanel.add(logoBot);
+
+        JPanel graph = new JPanel();
+        graph.setBounds(20, 100, 600, 350);
+        graph.setBorder(black);
+        graph.setBackground(Color.decode("#14004F"));
+
         mainPanel.add(graph);
+        mainPanel.add(new SentimentPanel("/Users/prathamaggarwal/desktop/college/CSD213/Swing/src/pythonProcess/@Dell_pie.png"));
         MyFrame frame = new MyFrame(bluePanel, mainPanel);
     }
 }
-

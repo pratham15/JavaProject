@@ -1,4 +1,5 @@
 """
+
 Original file - https://drive.google.com/file/d/1bycP3vrPywrky0zsXRWm66jIm728iIU0/view?usp=sharing
 """
 
@@ -151,7 +152,7 @@ def prediction(company_handle):
   opening_price = scaler.inverse_transform(opening_price)[-1]
   
   # Printing the predicyed opening price for tomorrow
-  print("The predicted opening price for tomorrow is:", opening_price)
+  print(opening_price)
 
 
 #for plotting

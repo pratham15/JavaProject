@@ -2,8 +2,6 @@ package com;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 
 public class Labels extends JButton{
@@ -13,9 +11,8 @@ public class Labels extends JButton{
             directory = "/Users/prathamaggarwal/desktop/college/CSD213/Swing/static/";
 
     boolean isSelected = false, hover = false;
-    private void changeState(){
-        State.setActive(this);
-    }
+
+
     Labels(String text, String URL){
         ImageIcon icon = new ImageIcon(directory + URL);
         Image img = icon.getImage();
@@ -26,7 +23,7 @@ public class Labels extends JButton{
         this.setIcon(icon);
         this.setIconTextGap(20);
         this.setText(text);
-        this.setFont(new Font("Serif", Font.BOLD, 28));
+        this.setFont(new Font("Helvetica", Font.BOLD, 28));
         this.setOpaque(true);
         this.setBorderPainted(false);
         this.setBackground(Color.decode(colorPassive));
@@ -35,28 +32,6 @@ public class Labels extends JButton{
         this.setForeground(Color.decode("#C2BFBF"));
         counter++;
 
-        this.addMouseListener(new java.awt.event.MouseAdapter(){
-
-            @Override
-            public void mouseEntered(java.awt.event.MouseEvent evt){
-                super.mouseEntered(evt);
-                hover = true;
-                changeColor();
-            }
-
-            @Override
-            public void mouseExited(MouseEvent e) {
-                super.mouseExited(e);
-                hover = false;
-                changeColor();
-            }
-
-            @Override
-            public void mouseReleased(MouseEvent e) {
-                super.mouseReleased(e);
-                changeState();
-            }
-        });
     }
 
     public void changeColor(){
@@ -68,5 +43,9 @@ public class Labels extends JButton{
             this.setBackground(Color.decode(colorPassive));
             this.setForeground(Color.decode("#C2BFBF"));
         }
+    }
+
+    protected void changeState(){
+        State.setActive(this);
     }
 }
