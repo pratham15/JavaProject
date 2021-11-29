@@ -12,6 +12,7 @@ public class Company extends Labels{
     final private static String dir = "/Users/prathamaggarwal/desktop/college/CSD213/Swing/src/pythonProcess/";
     public ImageIcon pieGraph, priceGraph;
     public String [] relatedCompanies, tweets;
+    public double predictedClosingPrice;
 
     MouseAdapter m = new MouseAdapter() {
         @Override
@@ -36,7 +37,7 @@ public class Company extends Labels{
         }
     };
 
-    Company(String Text, String URL, String sentimentGraphUrl, String PricePredictionGraphURL, String Tweets){
+    Company(String Text, String URL, String sentimentGraphUrl, String PricePredictionGraphURL, String Tweets, double closingPrice){
         super(Text, URL);
         this.sentimentGraphUrl = sentimentGraphUrl;
         this.addMouseListener(m);
@@ -50,6 +51,7 @@ public class Company extends Labels{
         CleanTweets tweet = new CleanTweets();
         relatedCompanies = tweet.get_related_list(Tweets);
         tweets = tweet.get_related_list("bad_words", Tweets);
+        this.predictedClosingPrice = closingPrice;
     }
 
     public ImageIcon getPieGraph(){
