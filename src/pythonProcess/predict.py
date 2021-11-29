@@ -178,3 +178,5 @@ if __name__=='__main__':
     parser.add_argument('--company_name', default='', help='Enter the company name')
     args = parser.parse_args()
     prediction(args.company_name)
+    # print(args.company_name)
+

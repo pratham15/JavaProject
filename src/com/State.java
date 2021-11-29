@@ -1,13 +1,13 @@
 package com;
 
 public class State {
-    public static Labels CurrentLabel;
-    public static void setActive(Labels newLabel) {
-        System.out.println("StateChange " + newLabel.getText());
-        CurrentLabel.isSelected =false;
-        newLabel.isSelected = true;
-        CurrentLabel.changeColor();
-        newLabel.changeColor();
-        CurrentLabel = newLabel;
+    public static Company currentCompany;
+    public static void setActive(Company newCompany){
+        System.out.println("StateChange " + newCompany.getText());
+        currentCompany.isSelected = false;
+        newCompany.isSelected = true;
+        currentCompany.changeColor();
+        newCompany.changeColor();
+        currentCompany= newCompany;
     }
 }

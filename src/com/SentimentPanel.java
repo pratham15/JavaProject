@@ -6,10 +6,15 @@ import java.awt.*;
 
 public class SentimentPanel extends JPanel {
     static Border black = BorderFactory.createLineBorder(Color.white);
+    static JLabel container;
+
+    public static void changeImage(ImageIcon graph){
+       container.setIcon(graph);
+    }
 
     SentimentPanel(String graphDir){
         ImageIcon graph = new ImageIcon(graphDir);
-        JLabel container = new JLabel(graph);
+        container = new JLabel(graph);
         container.setBounds(0, 0, 400, 300);
         container.setText("Sentiment Analysis");
         container.setForeground(Color.white);
