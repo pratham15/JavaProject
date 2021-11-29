@@ -1,11 +1,13 @@
 package com;
+import pythonProcess.SentimentAnalysis.SentimentAnalysis;
+
 import java.awt.*;
 import javax.swing.*;
 import javax.swing.border.Border;
 public class Main {
     public static void main(String[] args) {
 
-
+        SentimentAnalysis.main();
 
         Company Adobe= new Company("Adobe", "Adobe.png", "@Adobe_pie.png", "ADBE", "@Adobe",659.72998),
                 GS = new Company("Goldman Sachs", "GS.png", "@GoldmanSachs_pie.png", "GoldmanSachs", "@GoldmanSachs", 404.809),

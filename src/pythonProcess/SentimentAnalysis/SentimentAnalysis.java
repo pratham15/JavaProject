@@ -2,7 +2,7 @@ package pythonProcess.SentimentAnalysis;
 
 import java.io.*;
 public class SentimentAnalysis {
-    public static void main(String args[]) throws Exception {
+    public static void main() {
         String cmds[] = {"@Dell", "@Adobe", "@GoldmanSachs", "@SchindlerGroup", "@MorganStanley"};
         for(String company: cmds) {
             String command[] = {"python", "A.py", "--company_handle",company};
