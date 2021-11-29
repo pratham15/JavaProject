@@ -2,15 +2,16 @@ package com;
 import java.awt.*;
 import javax.swing.*;
 import javax.swing.border.Border;
-import pythonProcess.SentimentAnalysis.*;
 public class Main {
     public static void main(String[] args) {
 
-        Company Adobe= new Company("Adobe", "Adobe.png", "@Adobe_pie.png", "ADBE", "@Adobe"),
-                GS = new Company("Goldman Sachs", "GS.png", "@GoldmanSachs_pie.png", "GS", "@GoldmanSachs"),
-                DELL = new Company("Dell", "DELL.png", "@Dell_pie.png", "DELL", "@Dell"),
-                Schindler= new Company("Schindler", "schindler.jpg", "@SchindlerGroup_pie.png", "SCHP", "@SchindlerGroup"),
-                MS= new Company("Morgan Stanley", "MS.jpeg", "@MorganStanley_pie.png", "MS", "@MorganStanley");
+
+
+        Company Adobe= new Company("Adobe", "Adobe.png", "@Adobe_pie.png", "ADBE", "@Adobe",659.72998),
+                GS = new Company("Goldman Sachs", "GS.png", "@GoldmanSachs_pie.png", "GoldmanSachs", "@GoldmanSachs", 404.809),
+                DELL = new Company("Dell", "DELL.png", "@Dell_pie.png", "DELL", "@Dell", 56.700),
+                Schindler= new Company("Schindler", "schindler.jpg", "@SchindlerGroup_pie.png", "SCHP", "@SchindlerGroup",63.70),
+                MS= new Company("Morgan Stanley", "MS.jpeg", "@MorganStanley_pie.png", "MorganStanley", "@MorganStanley", 100.209);
 
 
         State.currentCompany = Adobe;
@@ -25,5 +26,6 @@ public class Main {
         MyFrame frame = new MyFrame(bluePanel, mainPanel);
         RelatedCompaniesPanel.update(Adobe.relatedCompanies);
         SentimentPanel.update(Adobe.tweets);
+        MainPanel.update(Adobe);
     }
 }
