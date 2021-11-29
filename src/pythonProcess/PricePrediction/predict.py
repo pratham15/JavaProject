@@ -26,13 +26,14 @@ def prediction(company_handle):
   from sklearn.preprocessing import MinMaxScaler
   scaler = MinMaxScaler(feature_range=(0, 1))
 
- #Closing prices 
+ # Closing prices
 
+  print("Here")
   from sklearn.preprocessing import MinMaxScaler
   from keras.models import Sequential
   from keras.layers import Dense, Dropout, LSTM
 
-#creating dataframe
+# creating dataframe
   data = df.sort_index(ascending=True, axis=0)
   new_data = pd.DataFrame(index=range(0,len(df)),columns=['Date', 'Close'])
   for i in range(0,len(data)):
@@ -80,7 +81,7 @@ def prediction(company_handle):
       X_test.append(inputs[i-60:i,0])
   X_test = np.array(X_test)
 
-  X_test = np.reshape(X_test, (X_test.shape[0],X_test.shape[1],1))
+  X_test = np.reshape(X_test, (X_test.shape[0],X_test.shape[1],-1))
   closing_price = model.predict(X_test)
   closing_price = scaler.inverse_transform(closing_price)
 
@@ -147,7 +148,7 @@ def prediction(company_handle):
       X_test.append(inputs[i-60:i,0])
   X_test = np.array(X_test)
 
-  X_test = np.reshape(X_test, (X_test.shape[0],X_test.shape[1],1))
+  X_test = np.reshape(X_test, (X_test.shape[0],X_test.shape[1],-1))
   opening_price = model.predict(X_test)
   opening_price = scaler.inverse_transform(opening_price)[-1]
   

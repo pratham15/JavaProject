@@ -49,6 +49,10 @@ def extractData(companyTwitter: str) -> None:
     tweets = rawData['data']
     tweetsDataFrame = pd.DataFrame(tweets, columns=["id","text"])
     # tweetsDataFrame.to_csv('{}_latest_tweets.csv'.format(companyTwitter), index=True)
+    f = open("{}.txt".format(companyTwitter), 'w')
+    for t in tweets:
+      f.write(t['text'].replace("\n", " ").rstrip('\t') + "\n")
+
 
     analyser = SentimentIntensityAnalyzer()
 

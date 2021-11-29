@@ -11,8 +11,9 @@ public class Labels extends JButton {
 
 	boolean isSelected = false, hover = false;
 
+	private ImageIcon icon;
 	Labels(String text, String URL) {
-		ImageIcon icon = new ImageIcon(directory + URL);
+		icon = new ImageIcon(directory + URL);
 		Image img = icon.getImage();
 		img = img.getScaledInstance(60, 20, Image.SCALE_SMOOTH);
 		icon = new ImageIcon(img);
@@ -29,7 +30,10 @@ public class Labels extends JButton {
 		this.setHorizontalAlignment(JButton.LEFT);
 		this.setForeground(Color.decode("#C2BFBF"));
 		counter++;
+	}
 
+	public ImageIcon getIcon(){
+		return icon;
 	}
 
 	public void changeColor() {
