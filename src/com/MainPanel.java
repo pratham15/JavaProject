@@ -34,11 +34,11 @@ public class MainPanel extends JPanel {
         predictedStockPrice.setForeground(Color.white);
         predictedStockPrice.setBounds(750, 10, 200, 100);
 
-        this.add(new PricePredictionPanel("/Users/prathamaggarwal/desktop/college/CSD213/Swing/src/pythonProcess/PricePrediction/ADBE_priceprediction.png"));
+        this.add(new PricePredictionPanel("/Users/prathamaggarwal/desktop/college/Sem 2/CSD213/Swing/src/pythonProcess/PricePrediction/ADBE_priceprediction.png"));
         this.add(mainLogo);
         this.add(predictedText);
         this.add(predictedStockPrice);
-        this.add(new SentimentPanel("/Users/prathamaggarwal/desktop/college/CSD213/Swing/src/pythonProcess/SentimentAnalysis/@Adobe_pie.png"));
+        this.add(new SentimentPanel("/Users/prathamaggarwal/desktop/college/Sem 2/CSD213/Swing/src/pythonProcess/SentimentAnalysis/@Adobe_pie.png"));
         this.add(new RelatedCompaniesPanel());
         //this.add(new LatestTweetsPanel());
     }

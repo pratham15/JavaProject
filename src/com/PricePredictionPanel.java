@@ -22,14 +22,15 @@ public class PricePredictionPanel extends JPanel {
         container.setHorizontalTextPosition(JLabel.CENTER);
         container.setVerticalTextPosition(JLabel.TOP);
         container.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 28));
-
         container.setIcon(graph);
+
         this.setBounds(20, 100,710, 350);
         this.setBorder(white);
         this.setBackground(Color.decode("#14004F"));
         this.add(container);
-
     }
+
+
     public static void update(ImageIcon icon){
         container.setIcon(icon);
     }

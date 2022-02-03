@@ -9,7 +9,7 @@ class Read_CSV{
 
     Read_CSV(String fileName){
         try{
-            this.file = new Scanner(new File("/Users/prathamaggarwal/desktop/college/CSD213/Swing/src/pythonProcess/SentimentAnalysis/" + fileName + ".txt"));
+            this.file = new Scanner(new File("/Users/prathamaggarwal/desktop/college/Sem 2/CSD213/Swing/src/pythonProcess/SentimentAnalysis/" + fileName + ".txt"));
         } catch (Exception ex){
             System.out.println("ERROR!!! FILE NOT FOUND!");
             System.exit(-1);
@@ -175,18 +175,5 @@ public class CleanTweets{
             }
         }
         return finalList;
-    }
-
-    public static void main(String[] args) {
-        CleanTweets t = new CleanTweets();
-        String [] tt = t.get_related_list("bad_words", "@Dell");
-        for(String i: tt)
-            System.out.println(i);
-
-        CleanTweets T = new CleanTweets();
-        String [] TT = T.get_related_list("@Dell");
-        for(String i: TT){
-            System.out.println(i);
-        }
     }
 }

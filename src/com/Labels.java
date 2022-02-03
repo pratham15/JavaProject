@@ -7,7 +7,7 @@ public class Labels extends JButton {
 	private static int counter = 0;
 	private final String colorActive = "#002481",
 			colorPassive = "#001A5B",
-			directory = "/Users/prathamaggarwal/desktop/college/CSD213/Swing/static/";
+			directory = "/Users/prathamaggarwal/desktop/college/Sem 2/CSD213/Swing/static/";
 
 	boolean isSelected = false, hover = false;
 

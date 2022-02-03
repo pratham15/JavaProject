@@ -7,9 +7,11 @@ import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
+
 public class Company extends Labels{
     private String sentimentGraphUrl;
-    final private static String dir = "/Users/prathamaggarwal/desktop/college/CSD213/Swing/src/pythonProcess/";
+    static CleanTweets tweet = new CleanTweets();
+    final private static String dir = "/Users/prathamaggarwal/desktop/college/Sem 2/CSD213/Swing/src/pythonProcess/";
     public ImageIcon pieGraph, priceGraph;
     public String [] relatedCompanies, tweets;
     public double predictedClosingPrice;
@@ -41,16 +43,15 @@ public class Company extends Labels{
         super(Text, URL);
         this.sentimentGraphUrl = sentimentGraphUrl;
         this.addMouseListener(m);
+
         pieGraph = new ImageIcon(dir + "SentimentAnalysis/"+sentimentGraphUrl);
         priceGraph = new ImageIcon(dir + "PricePrediction/" + PricePredictionGraphURL + "_priceprediction.png");
         Image img = priceGraph.getImage();
         img = img.getScaledInstance(700, 300, Image.SCALE_SMOOTH);
         priceGraph = new ImageIcon(img);
-
-
-        CleanTweets tweet = new CleanTweets();
         relatedCompanies = tweet.get_related_list(Tweets);
         tweets = tweet.get_related_list("bad_words", Tweets);
+
         this.predictedClosingPrice = closingPrice;
     }
 

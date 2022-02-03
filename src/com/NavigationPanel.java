@@ -22,7 +22,7 @@ public class NavigationPanel extends JPanel {
         logoBot.setForeground(Color.orange);
         logoBot.setFont(new Font("Raleway", Font.BOLD, 30));
 
-        ImageIcon logoIcon = new ImageIcon( "/Users/prathamaggarwal/desktop/college/CSD213/Swing/static/Logo.jpeg");
+        ImageIcon logoIcon = new ImageIcon( "/Users/prathamaggarwal/desktop/college/Sem 2/CSD213/Swing/static/Logo.jpeg");
         Image im = logoIcon.getImage();
         im = im.getScaledInstance(200, 100, Image.SCALE_SMOOTH);
         logoIcon = new ImageIcon(im);

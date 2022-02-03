@@ -3,8 +3,8 @@ package com;
 public class State {
     public static Company currentCompany;
     public static void setActive(Company newCompany){
-        System.out.println("StateChange " + newCompany.getText());
 
+        System.out.println("StateChange " + newCompany.getText());
         currentCompany.isSelected = false;
         newCompany.isSelected = true;
         currentCompany.changeColor();
@@ -14,6 +14,7 @@ public class State {
         PricePredictionPanel.update(newCompany.priceGraph);
         RelatedCompaniesPanel.update(newCompany.relatedCompanies);
         SentimentPanel.update(newCompany.tweets);
-        currentCompany= newCompany;
+
+        currentCompany = newCompany;
     }
 }
